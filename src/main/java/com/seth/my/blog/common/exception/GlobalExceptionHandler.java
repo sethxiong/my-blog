@@ -59,4 +59,11 @@ public class GlobalExceptionHandler {
         ObjectError objectError = bindingResult.getAllErrors().stream().findFirst().get();
         return Result.fail(objectError.getDefaultMessage());
     }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = IllegalArgumentException.class)
+    public Result handler(IllegalArgumentException e) {
+        log.error("Assert 异常：------------{}", e);
+        return Result.fail(e.getMessage());
+    }
 }
