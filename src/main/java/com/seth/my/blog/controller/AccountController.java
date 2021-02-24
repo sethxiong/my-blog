@@ -20,6 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * <p>
+ * Description: 登录接口开发
+ * </p>
+ * @author sethxiong
+ * @time 2021-02-24 23:32:26
+ * @see com.seth.my.blog.controller
+ *
+ */
 @RestController
 public class AccountController {
 
