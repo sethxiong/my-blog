@@ -10,6 +10,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @MapperScan("com.seth.my.blog.mapper")
 public class MybatisPlusConfig {
+    /**
+     * 分页
+     * @return
+     */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();

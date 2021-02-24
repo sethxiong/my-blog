@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public Result test(@PathVariable Long id) {
-        return Result.succ(userService.getOne(new QueryWrapper<User>().eq("id", id)));
+        return Result.succ(userService.getById(1L));
     }
 
 }

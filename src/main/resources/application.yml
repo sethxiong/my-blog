@@ -1,5 +1,6 @@
 server:
   port: 8081
+# Mybatis-Plus
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 # DataSource Config
@@ -9,3 +10,17 @@ spring:
     url: jdbc:mysql://localhost:3306/my-blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 12345678
+# redis
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+
+# jwt
+my:
+  blog:
+    jwt:
+      secret: f4e2e52034348f86b67cde581c0f9eb5
+      # token 有效时长 7 天, 单位秒
+      expire: 604800
+      header: Authorization
