@@ -60,13 +60,27 @@ public class CodeGenerator {
         gc.setServiceName("%sService");
         mpg.setGlobalConfig(gc);
 
-        // 数据源配置
+        // 数据源配置 mysql
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://localhost:3306/my-blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("12345678");
+        mpg.setDataSource(dsc);
+
+        String url = "";
+        // 实例
+        String ins = "";
+        String user = "";
+        String pwd = "";
+
+        // 数据源配置 oracle
+        dsc.setUrl("jdbc:oracle:thin:@".concat(url).concat(":1521:".concat(ins)));
+        // dsc.setSchemaName("public");
+        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
+        dsc.setUsername(user);
+        dsc.setPassword(pwd);
         mpg.setDataSource(dsc);
 
         // 包配置
