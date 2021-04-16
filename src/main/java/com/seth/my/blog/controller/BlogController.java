@@ -10,6 +10,8 @@ import com.seth.my.blog.common.Result;
 import com.seth.my.blog.entity.Blog;
 import com.seth.my.blog.service.BlogService;
 import com.seth.my.blog.util.ShiroUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,7 @@ import java.time.LocalDateTime;
  * @author Sethxiong
  * @since 2021-02-24
  */
+@Api(tags = "博客信息管理")
 @RestController
 public class BlogController {
 
@@ -45,6 +48,7 @@ public class BlogController {
      * @param currentPage
      * @return
      */
+    @ApiOperation("分页查询")
     @GetMapping("/blogs")
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
         // 每页 5 条记录
